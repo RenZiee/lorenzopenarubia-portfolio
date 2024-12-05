@@ -1,0 +1,664 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: #080808;
+    --secong-bg-color: #001005;
+    --text-color: white;
+    --main-color: #38a584;
+}
+
+html {
+    font-size: 60%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.6rem;
+}
+
+#particles-js {
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    background-color: #2681665e;
+    background-size: cover;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 2rem 10%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--text-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+span {
+    color: var(--main-color);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    border-bottom: 3px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 1rem;
+        margin-left: 0;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 12%;
+    z-index: 1;
+    position: relative; 
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.home-content h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+    position: relative;
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin: 1rem 0;
+}
+
+.home-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.home-img img {
+    width: 32vw; /* This makes the image width responsive */
+    height: 32vw; 
+    border-radius: 50%; 
+    box-shadow: 0 0 25px var(--main-color); 
+    transition: 0.4s ease-in-out; 
+    object-fit: cover; 
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 25px var(--main-color),
+                0 0 50px var(--main-color),
+                0 0 100px var(--main-color);
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 0.5rem;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--text-color);
+    background-color: var(--main-color);
+    transform: scale(1.2) translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+}
+
+.btn-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    border-radius: 3rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 50px var(--main-color);
+}
+
+.about {
+    display: flex;
+    gap: 8rem;
+    padding-top: 20rem;
+}
+
+.about-content {
+    max-width: 50%;
+}
+
+.about-content h2 {
+    font-size: 4.5rem;
+    font-weight: 750;
+}
+
+.about-content p {
+    font-size: 2rem;
+    line-height: 1.8;
+    margin-top: 3rem;
+}
+
+.section-img {
+    width: 250px; /* Increased width */
+    height: 250px; /* Increased height to match the width and maintain a square shape */
+}
+
+.section-img img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Ensure the height is 100% of the container */
+    border-radius: 50%; /* Makes the image circular */
+    box-shadow: 0 0 25px var(--main-color); /* Adds shadow around the image */
+    object-fit: cover; /* Ensures the image covers the square container without distortion */
+}
+
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+}
+.typing {
+    display: block;
+    margin-top: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.01em solid #38a584;
+    animation: typing 5s steps(8) 1s infinite, blink-caret 1s step-end infinite;
+    position: relative;
+    top: 0;
+    color: var(--main-color);
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+.services {
+    color: black;
+    padding-top: 10rem;
+    position: relative;
+    z-index: 10;
+}
+
+.services h2 {
+    color: var(--text-color);
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 10rem;
+    position: relative;
+    z-index: 20;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.service-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    height: 400px;
+    border-radius: 3rem;
+    cursor: pointer;
+    border: 5px solid transparent;
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    position: relative;
+}
+
+.service-box:hover {
+    background-color: var(--secong-bg-color);
+    color: var(--main-color);
+    border: 5px solid var(--main-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--main-color), 0 0 50px var(--main-color);
+}
+
+.service-box:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 3rem;
+    box-shadow: 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+    z-index: -1;
+}
+
+.service-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.service-info i {
+    font-size: 8rem;
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.service-box:hover .service-info i {
+    transform: rotate(360deg) scale(1.1);
+    color: var(--text-color);
+}
+
+.service-info h4 {
+    font-size: 2rem;
+    margin: 2rem 0;
+    font-weight: 800;
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.service-box:hover .service-info h4 {
+    color: var(--text-color);
+    transform: scale(1.1);
+}
+
+.service-info p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.7;
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.service-box:hover .service-info p {
+    transform: scale(1.05);
+    color: var(--text-color);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 6px;
+    transition: opacity 0.3s ease;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; 
+    border-radius: 6px; 
+}
+
+body, html.scrollbar-hidden {
+    overflow: hidden; 
+}
+
+body.scrollbar-visible, html.scrollbar-visible {
+    overflow: scroll; 
+}
+.contact{
+    background-color: transparent;
+}
+.contact h2{
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+.contact form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin: 5rem 0;
+    text-align: center;
+}
+.contact form .input-box input,
+.contact form textarea{
+    width: 100%;
+    padding: 2.5rem;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: 2rem;
+    border: 2px solid var(--main-color);
+    margin: 1.5rem 0;
+    resize: none;
+}
+.footer{
+    background-color: transparent;
+    padding: 50px 0;
+}
+.footer .social-icons{
+    text-align: center;
+}
+.footer ul{
+    text-align: center;
+    font-size: 1.8rem;
+}
+.footer ul li{
+    display: inline-block;
+    margin-left: 20px;
+}
+.footer ul li a{
+    color: white;
+    border-bottom: 3px solid transparent;
+    transition: 0.3 ease-in-out;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid var(--main-color);
+}
+.footer .copyright{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+@media(max-width: 1024px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3rem;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+        border-right: 2px solid var(--main-color);
+        border-bottom-right-radius: 2rem;
+        display: none;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: var(--text-color);
+    }
+    .navbar.active{
+        display: block;
+    }
+    .home{
+        flex-direction: column-reverse;
+        margin: 5rem 0;
+        gap: 5rem;
+    }
+    .home-content{
+        align-items: center;
+        text-align: center;
+    }
+    .home-img img{
+        width: 52vw;
+    }
+    .about{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .about h2{
+        text-align: center;
+        margin: 2rem 0;
+    }
+    .about img{
+        width: 52vw;
+    }
+    .contact form{
+        flex-direction: column;
+    }
+}
+/* Achievements Heading Styling */
+.achievements .heading {
+    text-align: center; /* Center the heading */
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Achievement Box Styling (Smaller size) */
+.achievement-box,
+.achievement-box-a {
+    padding: 1.2rem; /* Slightly less padding */
+    text-align: center;
+    background-color: var(--main-color);
+    border-radius: 1rem;
+    cursor: pointer;
+    border: 5px solid transparent;
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    position: relative;
+    height: 220px; /* Smaller height */
+    width: 100%;
+    max-width: 340px; /* Adjusted max width for smaller boxes */
+    margin: 0 auto; /* Center the boxes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    color: black; /* Set text color to black by default */
+}
+
+/* Hover Effects */
+.achievement-box:hover,
+.achievement-box-a:hover {
+    background-color: var(--secong-bg-color);
+    color: var(--main-color);
+    border: 5px solid var(--main-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--main-color), 0 0 50px var(--main-color);
+}
+
+/* Hover Effects for box shadow */
+.achievement-box:hover::before,
+.achievement-box-a:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0 50px var(--main-color), 0 0 100px var(--main-color);
+    z-index: -1;
+}
+
+/* Achievement Icon Styling */
+.achievement-box i,
+.achievement-box-a i {
+    font-size: 2.5rem; /* Smaller icon */
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+    color: black; /* Default icon color black */
+}
+
+/* Hover Effect on Icons */
+.achievement-box:hover i,
+.achievement-box-a:hover i {
+    transform: rotate(75deg) scale(1.5);
+    color: var(--text-color); /* Change to text color when hovered */
+}
+
+/* Achievement Heading (h4) Styling */
+.achievement-box h4,
+.achievement-box-a h4 {
+    font-size: 1.4rem; /* Adjusted heading font size for balance */
+    margin: 1rem 0;
+    font-weight: 800;
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+    color: black; /* Default text color black */
+}
+
+/* Hover Effect on Heading */
+.achievement-box:hover h4,
+.achievement-box-a:hover h4 {
+    color: var(--text-color); /* Change to text color when hovered */
+    transform: scale(1.1);
+}
+
+/* Achievement Paragraph (p) Styling */
+.achievement-box p,
+.achievement-box-a p {
+    font-size: 1.3rem; /* Adjusted paragraph font size */
+    font-weight: 600;
+    line-height: 1.7;
+    transition: transform 0.4s ease-in-out, color 0.4s ease-in-out;
+    color: black; /* Default paragraph color black */
+}
+
+/* Hover Effect on Paragraph */
+.achievement-box:hover p,
+.achievement-box-a:hover p {
+    transform: scale(1.3);
+    color: var(--text-color); /* Change to text color when hovered */
+}
+
+/* Achievements Columns Layout */
+.achievements-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.achievement-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* For small screens (Stack the columns) */
+@media (max-width: 768px) {
+    .achievements-container {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+
+    .achievement-box,
+    .achievement-box-a {
+        padding: 1.2rem;
+        font-size: 1.2rem;
+        max-width: 280px; /* Adjust max width on small screens */
+    }
+}
